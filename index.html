@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golden Frame — Game Development Studio</title>
+<meta name="description" content="Golden Frame is a game development studio that designs and ships original games.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' fill='none' stroke='%23d4a843' stroke-width='3'/%3E%3Crect x='11' y='11' width='10' height='10' fill='%23d4a843' transform='rotate(45 16 16)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="Golden Frame">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" fill="none" stroke="#d4a843" stroke-width="2.5"/><rect x="11.5" y="11.5" width="9" height="9" fill="#d4a843" transform="rotate(45 16 16)"/></svg>
+      Golden Frame
+    </a>
+    <ul id="menu">
+      <li><a href="#about" data-i18n="nav.about"></a></li>
+      <li><a href="#projects" data-i18n="nav.projects"></a></li>
+      <li><a href="#gallery" data-i18n="nav.gallery"></a></li>
+      <li><a href="#contact" data-i18n="nav.contact"></a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ru">RU</button>
+      </div>
+      <a href="#contact" class="btn btn-gold" data-i18n="nav.cta"></a>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow" data-i18n="hero.eyebrow"></div>
+      <h1><span data-i18n="hero.title1"></span> <span class="gold" data-i18n="hero.title2"></span></h1>
+      <p class="lead" data-i18n="hero.lead"></p>
+      <div class="cta">
+        <a href="#contact" class="btn btn-gold" data-i18n="hero.cta1"></a>
+        <a href="#projects" class="btn btn-ghost" data-i18n="hero.cta2"></a>
+      </div>
+    </div>
+    <div class="frame" aria-hidden="true"><div class="inner"><div class="diamond"></div></div></div>
+  </div>
+</section>
+
+<section id="about" style="padding-top:40px">
+  <div class="wrap about-grid reveal">
+    <div>
+      <div class="eyebrow" data-i18n="about.eyebrow"></div>
+      <h2 class="about-title" data-i18n="about.title"></h2>
+      <p data-i18n="about.p1"></p>
+      <p data-i18n="about.p2"></p>
+    </div>
+    <div class="features">
+      <div class="feature"><div class="ico">◆</div><div><h3 data-i18n="f1.t"></h3><p data-i18n="f1.d"></p></div></div>
+      <div class="feature"><div class="ico">▣</div><div><h3 data-i18n="f2.t"></h3><p data-i18n="f2.d"></p></div></div>
+      <div class="feature"><div class="ico">✦</div><div><h3 data-i18n="f3.t"></h3><p data-i18n="f3.d"></p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow" data-i18n="proj.eyebrow"></div>
+      <h2 data-i18n="proj.title"></h2>
+      <p data-i18n="proj.lead"></p>
+    </div>
+    <div class="projects" id="projectList"></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow" data-i18n="gal.eyebrow"></div>
+      <h2 data-i18n="gal.title"></h2>
+      <p data-i18n="gal.lead"></p>
+    </div>
+    <div class="gallery" id="galleryGrid"></div>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <div class="eyebrow" data-i18n="con.eyebrow"></div>
+      <h2 class="about-title" data-i18n="con.title"></h2>
+      <p data-i18n="con.lead"></p>
+      <ul>
+        <li><b data-i18n="con.mail"></b><span id="cEmail"></span></li>
+        <li><b data-i18n="con.tg"></b><span id="cTg"></span></li>
+      </ul>
+    </div>
+    <form id="consultForm" class="reveal" novalidate>
+      <label><span data-i18n="form.name"></span>
+        <input name="name" required maxlength="80" autocomplete="name"></label>
+      <label><span data-i18n="form.phone"></span>
+        <input name="phone" type="tel" required maxlength="30" autocomplete="tel" inputmode="tel" placeholder="+996 ___ ___ ___"></label>
+      <label><span data-i18n="form.project"></span>
+        <input name="project" required maxlength="200" list="projectOptions" data-i18n-ph="form.projectPh"></label>
+      <datalist id="projectOptions"></datalist>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-gold" type="submit" id="submitBtn" data-i18n="form.send"></button>
+      <div class="status" id="formStatus" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© <span id="year"></span> Golden Frame. <span data-i18n="foot.rights"></span></div>
+    <nav id="footLinks"></nav>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <div class="stage" id="lbStage"></div>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next">›</button>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
